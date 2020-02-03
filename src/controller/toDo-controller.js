@@ -35,20 +35,22 @@ exports.addNewTodo = (req, res) => {
 exports.updateTodo = (req, res) => {
 
     ToDo.findByIdAndUpdate(req.params.id, req.body,
-        { new: true, useFindAndModify: false, runValidators: true },
+        {new: true, useFindAndModify: false, runValidators: true},
         (err, updatedToDo) => {
 
-        if (err.name == "ValidationError") {
-            logger.error(`PUT Request failed: ${err}`);
-            res.status(412).send(err);
-        }
-        else if(err){
-            logger.error(`PUT Request failed: ${err}`);
-            res.status(404).send(err);
-        }
-        logger.debug(`PUT Request successful: updated ToDo with id: ${req.params.id}`);
-        res.status(200).json(updatedToDo);
-    });
+
+            if (err) {
+                logger.error(`POST Request failed: ${err}`);
+                res.status(400).send(err);
+            }
+            // if (err.name === "ValidationError") {
+            //     logger.error(`PUT Request failed: ${err}`);
+            //     res.status(412).send(err);
+            // }
+
+            logger.debug(`PUT Request successful: updated ToDo with id: ${req.params.id}`);
+            res.status(200).json(updatedToDo);
+        });
 };
 
 exports.deleteTodo = (req, res) => {
