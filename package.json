@@ -1,0 +1,22 @@
+{
+  "name": "expressrest_todo",
+  "version": "1.0.0",
+  "description": "REST-Api for ToDo-App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teamhogwarts/expressREST_ToDo.git"
+  },
+  "author": "Benjamin Brodwolf, Pascal Andermatt, Nadia Kramer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teamhogwarts/expressREST_ToDo/issues"
+  },
+  "homepage": "https://github.com/teamhogwarts/expressREST_ToDo#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
