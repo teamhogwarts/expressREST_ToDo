@@ -62,7 +62,7 @@ exports.deleteTodo = (req, res) => {
             res.status(404).send(err);
         }
         logger.debug(`DELETE Request successful: deleted Todo with id: ${req.params.id}`);
-        res.status(200).send('Todo successfully deleted');
+        res.status(204).send();
     });
 };
 

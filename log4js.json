@@ -22,7 +22,7 @@
       ],
       "level": "debug"
     },
-    "questionnaire-controller": {
+    "todo-controller": {
       "appenders": [
         "out"
       ],
