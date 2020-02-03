@@ -17,7 +17,7 @@ log4js.configure('log4js.json');
 const logger = log4js.getLogger('app');
 
 // mongoose connection
-const url = 'mongodb://' + process.env.MONGO_HOST + '/' + process.env.MONGO_DATABASE;
+const url = 'mongodb://' + config.MONGO_HOST + '/' + config.MONGO_DATABASE;
 mongoose.Promise = global.Promise;
 mongoose.connect(url, {
     useNewUrlParser: true,
@@ -37,6 +37,6 @@ app.use('/todo-express', dispatcher);
 
 
 
-app.listen(process.env.PORT, () => {
-    logger.info(`Server is running on port ${process.env.PORT}`)
+app.listen(config.PORT, () => {
+    logger.info(`Server is running on port ${config.PORT}`)
 });
