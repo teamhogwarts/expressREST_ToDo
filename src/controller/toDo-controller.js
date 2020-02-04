@@ -54,15 +54,15 @@ exports.updateTodo = (req, res) => {
 };
 
 exports.deleteTodo = (req, res) => {
-
-    ToDo.findByIdAndDelete(req.params.id, (err, todo) => {
+    const id = req.params.id;
+    ToDo.findByIdAndDelete(id, (err, todo) => {
 
         if (err) {
             logger.error(`DELETE Request failed: ${err}`);
             res.status(404).send(err);
         }
-        logger.debug(`DELETE Request successful: deleted Todo with id: ${req.params.id}`);
-        res.status(204).send();
+        logger.debug(`DELETE Request successful: deleted Todo with id: ${id}`);
+        res.status(200).json(id);
     });
 };
 
